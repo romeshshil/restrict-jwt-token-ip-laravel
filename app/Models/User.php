@@ -46,6 +46,9 @@ class User extends Authenticatable implements JWTSubject
     {
         return ['hst' => md5(gethostname()),
         'ipa' => md5(request()->ip()),
+        'ipa_a' => request()->ip(),
+        'ura_a' => request()->userAgent(),
+        'hst_a' => gethostname(),
         'ura' => md5(request()->userAgent()),];
     }
     public function products()
